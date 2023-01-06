@@ -272,3 +272,5 @@ if r.status_code == 200:
 else:
     print(r.status_code, 'Page not found')
     raise
+
+output_xml(lod)
