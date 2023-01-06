@@ -2,11 +2,29 @@ from datetime import datetime
 import json
 import os
 import re
+import sys
 import time
 import xml.etree.ElementTree as ET
 
 from bs4 import BeautifulSoup
 import requests
+
+def get_email(email=None):
+    ''' Retrieves email address for polite communication with CrossRef - or asks user if unavailable.
+        Alternatively, pass a kwarg directly or from the command line. '''
+
+    if email:
+        return email
+    filename = 'email.txt'
+    if os.path.isfile(filename):
+        with open(filename, 'rt') as fin:
+            email = fin.read()
+    else:
+        email = input('Email address (for CrossRef polite authentication): ')
+        with open(filename, 'tw') as fout:
+            fout.write(email)
+
+    return email
 
 def read_soup(r) -> list:
     ''' Reads in the html and returns a list of titles from a single line in the html'''
@@ -221,19 +239,12 @@ headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/
            'Connection': 'keep-alive'
            }
 
-def get_email():
-    filename = 'email.txt'
-    if os.path.isfile(filename):
-        with open(filename, 'rt') as fin:
-            email = fin.read()
-    else:
-        email = input('Email address (for CrossRef polite authentication): ')
-        with open(filename, 'tw') as fout:
-            fout.write(email)
-
-    return email
-
-email = get_email()
+# Retrieve user email for CrossRef authentication
+try:
+    email = get_email(email=f'{sys.argv[1]}@astrazeneca.com') # Uses parameter passed from cmd
+except IndexError:
+    email = get_email()
+    
 headers_crossref = {'User-Agent': 'Peeriodicals-to-RSS; mailto:{email}',
            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
            'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
