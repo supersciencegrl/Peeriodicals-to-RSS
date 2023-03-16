@@ -11,6 +11,8 @@ https://raw.githubusercontent.com/supersciencegrl/Peeriodicals-to-RSS/main/rss.x
 ```
 may be added directly to an RSS reader, and will then update automatically like any other RSS feed. 
 
+Alternatively, click through to **[High-Throughput Automation in R and D](https://peeriodicals.com/peeriodicals/high-throughput-automation-in-rampd)** to subscribe by email at the source. 
+
 ## Function
 This script is made to run automatically once per hour _via_ GitHub actions. It will add any new publications in the Peeriodicals to the RSS feed. 
 
