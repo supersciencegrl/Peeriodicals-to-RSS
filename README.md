@@ -1,6 +1,6 @@
 # Peeriodicals to RSS
 
-This repository is made to interact with the **[High-Throughput Automation in R and D](https://peeriodicals.com/peeriodicals/high-throughput-automation-in-rampd)** Peeriodicals site. It can readily be edited to work with other Peeriodicals too! 
+This repository is made to interact with the **[High-Throughput Automation in R and D](https://peeriodicals.com/peeriodicals/high-throughput-automation-in-rampd)** Peeriodicals site (click this link to subscribe by email rather than RSS). It can readily be edited to work with other Peeriodicals too! 
 
 The High-Throughput Automation in R&D Peeriodicals overlay journal aims to be a repository of peer-reviewed articles on the use of HTE for small molecules and related topics in R&D laboratories. It is currently curated by Nessa Carson and Luigi da Vi&agrave;. 
 
