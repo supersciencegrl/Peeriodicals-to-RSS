@@ -8,6 +8,21 @@
 		<category>Science</category>
 		<description>This journal aims to be a repository of peer-reviewed articles on the use of HTE for small molecules and related topics in R&amp;D laboratories.</description>
 		<item>
+			<title>RIPPLY: Real-TIme Parallel Progress AnaLYsis of Organic Reactions Using Near-Infrared Spectroscopy</title>
+			<link>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/68DE7ACBE45A1ED71EE0DF2C529FC3</link>
+			<guid>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/68DE7ACBE45A1ED71EE0DF2C529FC3?guid=0</guid>
+			<pubDate>Fri, 27 Oct 2023 12:48 GMT</pubDate>
+			<description><![CDATA[
+				<h5>RIPPLY: Real-TIme Parallel Progress AnaLYsis of Organic Reactions Using Near-Infrared Spectroscopy</h5>
+				<p>
+				in <em>Organic Process Research &amp; Development</em><br>
+				<a href="http://orcid.org/0000-0001-5074-6706" _target="_blank" rel="noopener">Robbert van Putten</a>, Koen De Smet, <a href="http://orcid.org/0000-0003-2973-6540" _target="_blank" rel="noopener">Laurent Lefort</a><br>
+				<em>Org. Process Res. Dev.</em> <strong>2023</strong>, <a href="https://doi.org/10.1021/acs.oprd.3c00257" target="_blank" ref="noopener">10.1021/acs.oprd.3c00257</a>
+				</p>
+				]]>
+			</description>
+		</item>
+		<item>
 			<title>High-Throughput Determination of Stern&amp;u2013;Volmer Quenching Constants for Common Photocatalysts and Quenchers</title>
 			<link>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/712C0C05D55675A187923F6C8E2785</link>
 			<guid>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/712C0C05D55675A187923F6C8E2785?guid=0</guid>
@@ -656,7 +671,7 @@
 			<title>Automating drug discovery</title>
 			<link>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/AF1D5A098A891298C5F369057781FD</link>
 			<guid>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/AF1D5A098A891298C5F369057781FD?guid=0</guid>
-			<pubDate>Wed, 22 Dec 2021 13:23 GMT</pubDate>
+			<pubDate>Sun, 03 Sep 2023 12:02 GMT</pubDate>
 			<description><![CDATA[
 				<h5>Automating drug discovery</h5>
 				<p>
@@ -1412,7 +1427,7 @@
 				<p>
 				in <em>Angewandte Chemie International Edition</em><br>
 				Connor W. Coley, Natalie S. Eyke, <a href="http://orcid.org/0000-0001-7192-580X" _target="_blank" rel="noopener">Klavs F. Jensen</a><br>
-				<em>Angew Chem Int Ed</em> <strong>2019</strong>, 59, 23414&ndash;23436
+				<em>Angew Chem Int Ed</em> <strong>2020</strong>, 59, 23414&ndash;23436
 				</p>
 				]]>
 			</description>
