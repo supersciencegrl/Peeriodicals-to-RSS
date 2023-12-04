@@ -107,6 +107,7 @@ def escape_cdata(text):
         return text
     except (TypeError, AttributeError):
         ET._raise_serialization_error(text)
+# Override the original function in the ET module
 ET._escape_cdata = escape_cdata
 
 def generate_reference(journal_abbr, year, volume, pages, doi):
@@ -229,6 +230,7 @@ if os.path.isfile('proxies.txt'):
         for line in fin.readlines():
             k, v = line.split(': ')
             proxies[k] = v.strip()
+proxies = {}
 
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
