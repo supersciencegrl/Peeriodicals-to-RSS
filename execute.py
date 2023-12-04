@@ -71,7 +71,7 @@ def publication_to_dict(publication: str) -> dict:
         results['PubMed'] = splits[splits.index('PubMed') - 4].replace('\\/', '/')
 
     updated_date = splits[splits.index('updated_at') + 2]
-    results['updated'] = datetime.strptime(updated_date, '%Y-%m-%d %H:%M:%S')
+    results['updated'] = datetime.strptime(updated_date, '%Y-%m-%dT%H:%M:%S.000000Z')
 
     if 'editorial_decision' in splits:
         editorial_decision = splits[splits.index('editorial_decision') + 1]
@@ -202,7 +202,6 @@ def output_xml(lod: list):
     channel_description = ET.SubElement(channel, 'description').text = peeriodical_description
 
     for publication in lod[::-1]:
-        print(publication['title'])
         if publication['editorial_decision'] is True:
             title = publication['title']
 ##            print(title) # for debugging
