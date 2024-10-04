@@ -14,10 +14,10 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.9
+    - name: Set up Python 3.10
       uses: actions/setup-python@v1
       with:
-        python-version: 3.9
+        python-version: 3.10
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -25,6 +25,9 @@ jobs:
     - name: Run execute.py
       run: |
         python execute.py ${{ secrets.EMAIL }}
+    - name: Git security
+      run: |
+        git config --global --add safe.directory /github/workspace
     - name: Commit files
       run: |
         echo ${{ github.ref }}
