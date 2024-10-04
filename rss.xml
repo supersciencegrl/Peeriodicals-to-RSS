@@ -6,7 +6,172 @@
 		<atom:link href="" rel="self" type="application/rss+xml" />
 		<language>en-gb</language>
 		<category>Science</category>
-		<description>This journal aims to be a repository of peer-reviewed articles on the use of HTE for small molecules and related topics in R&amp;D laboratories.</description>
+		<description>This journal aims to be a repository of peer-reviewed articles on the     use of HTE for small molecules and related topics in R&amp;D laboratories.</description>
+		<item>
+			<title>Deep integration of low-cost liquid handling robots in an industrial pharmaceutical development environment</title>
+			<link>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/F65295E8DE0D292EC73601799B9410</link>
+			<guid>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/F65295E8DE0D292EC73601799B9410?guid=0</guid>
+			<pubDate>Mon, 30 Sep 2024 17:19 GMT</pubDate>
+			<description><![CDATA[
+				<h5>Deep integration of low-cost liquid handling robots in an industrial pharmaceutical development environment</h5>
+				<p>
+				in <em>SLAS Technology</em><br>
+				<a href="display_name" _target="_blank" rel="noopener">Anton Thieme</a>, <a href="display_name" _target="_blank" rel="noopener">Sean Renwick</a>, <a href="display_name" _target="_blank" rel="noopener">Michaela Marschmann</a>, <a href="display_name" _target="_blank" rel="noopener">Pedro Ivo Guimaraes</a>, <a href="display_name" _target="_blank" rel="noopener">Susanne Weissenborn</a>, <a href="display_name" _target="_blank" rel="noopener">Jamie Clifton</a><br>
+				<em>SLAS Technology</em> <strong>2024</strong>, 29, 100180
+				</p>
+				]]>
+			</description>
+		</item>
+		<item>
+			<title>Parallel and High Throughput Reaction Monitoring with Computer Vision</title>
+			<link>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/2CE731EEA2FDDCC6167201AFD9CD14</link>
+			<guid>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/2CE731EEA2FDDCC6167201AFD9CD14?guid=0</guid>
+			<pubDate>Mon, 09 Sep 2024 08:59 GMT</pubDate>
+			<description><![CDATA[
+				<h5>Parallel and High Throughput Reaction Monitoring with Computer Vision</h5>
+				<p>
+				in <em>Angewandte Chemie International Edition</em><br>
+				Henry Barrington, Timothy J.D. McCabe, Kristin Donnachie, Calum Fyfe, Aaron McFall, Marina Gladkikh, Jake McGuire, Chunhui Yan, Marc Reid<br>
+				<em>Angew Chem Int Ed</em> <strong>2024</strong>,             <a href="https://doi.org/10.1002/anie.202413395" target="_blank" rel="noopener">10.1002/anie.202413395</a>
+				</p>
+				]]>
+			</description>
+		</item>
+		<item>
+			<title>Legion: An Instrument for High-Throughput Electrochemistry</title>
+			<link>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/EF3AE3E943BD0591D3B9BECF5F0967</link>
+			<guid>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/EF3AE3E943BD0591D3B9BECF5F0967?guid=0</guid>
+			<pubDate>Fri, 05 Jul 2024 17:43 GMT</pubDate>
+			<description><![CDATA[
+				<h5>Legion: An Instrument for High-Throughput Electrochemistry</h5>
+				<p>
+				in <em>ACS Measurement Science Au</em><br>
+				<a href="display_name" _target="_blank" rel="noopener">Benjamin H R Gerroll</a>, <a href="display_name" _target="_blank" rel="noopener">Krista M Kulesa</a>, <a href="display_name" _target="_blank" rel="noopener">Charles A Ault</a>, <a href="display_name" _target="_blank" rel="noopener">Lane A Baker</a><br>
+				<em>ACS Meas. Sci. Au</em> <strong>2023</strong>, 3, 371&ndash;379
+				</p>
+				]]>
+			</description>
+		</item>
+		<item>
+			<title>Predicting drug solubility in organic solvents mixtures: A machine-learning approach supported by high-throughput experimentation</title>
+			<link>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/4FF3EBC1450A11E35669481D148DA7</link>
+			<guid>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/4FF3EBC1450A11E35669481D148DA7?guid=0</guid>
+			<pubDate>Tue, 27 Aug 2024 10:24 GMT</pubDate>
+			<description><![CDATA[
+				<h5>Predicting drug solubility in organic solvents mixtures: A machine-learning approach supported by high-throughput experimentation</h5>
+				<p>
+				in <em>International Journal of Pharmaceutics</em><br>
+				<a href="http://orcid.org/0000-0002-3360-0470" _target="_blank" rel="noopener">Francesca Cenci</a>, <a href="http://orcid.org/0000-0003-3476-2671" _target="_blank" rel="noopener">Samir Diab</a>, <a href="http://orcid.org/0000-0001-8576-1228" _target="_blank" rel="noopener">Paola Ferrini</a>, <a href="http://orcid.org/0000-0002-4006-1890" _target="_blank" rel="noopener">Catajina Harabajiu</a>, <a href="http://orcid.org/0000-0002-8125-5704" _target="_blank" rel="noopener">Massimiliano Barolo</a>, <a href="http://orcid.org/0000-0003-1561-0584" _target="_blank" rel="noopener">Fabrizio Bezzo</a>, <a href="http://orcid.org/0000-0001-8383-6783" _target="_blank" rel="noopener">Pierantonio Facco</a><br>
+				<em>International Journal of Pharmaceutics</em> <strong>2024</strong>, 660, 124233
+				</p>
+				]]>
+			</description>
+		</item>
+		<item>
+			<title>Addressing Reproducibility Challenges in High-Throughput Photochemistry</title>
+			<link>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/9C56F4DD2F77A9768A2799C4385CF7</link>
+			<guid>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/9C56F4DD2F77A9768A2799C4385CF7?guid=0</guid>
+			<pubDate>Fri, 05 Jul 2024 01:50 GMT</pubDate>
+			<description><![CDATA[
+				<h5>Addressing Reproducibility Challenges in High-Throughput Photochemistry</h5>
+				<p>
+				in <em>JACS Au</em><br>
+				<a href="http://orcid.org/0000-0002-1302-7865" _target="_blank" rel="noopener">Brenda Pijper</a>, Luc&u00ed;a M. Saavedra, Matteo Lanzi, <a href="http://orcid.org/0000-0002-5279-2578" _target="_blank" rel="noopener">Maialen Alonso</a>, Alberto Fontana, Marta Serrano, Jos&u00e9; Enrique G&u00f3;mez, <a href="http://orcid.org/0000-0002-7402-4764" _target="_blank" rel="noopener">Arjan W. Kleij</a>, Jes&u00fa;s Alc&u00e1;zar, Santiago Ca&u00f1;ellas<br>
+				<em>JACS Au</em> <strong>2024</strong>, 4, 2585&ndash;2595
+				</p>
+				]]>
+			</description>
+		</item>
+		<item>
+			<title>The ReactALL Platform: Experimental Data and Case Studies</title>
+			<link>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/E7ADF0A9913ADA906C31A929DD57FC</link>
+			<guid>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/E7ADF0A9913ADA906C31A929DD57FC?guid=0</guid>
+			<pubDate>Wed, 21 Aug 2024 10:22 GMT</pubDate>
+			<description><![CDATA[
+				<h5>The ReactALL Platform: Experimental Data and Case Studies</h5>
+				<p>
+				in <em>Organic Process Research &amp; Development</em><br>
+				Joel M. Hawkins, David M. Pfisterer, <a href="http://orcid.org/0000-0001-8973-5684" _target="_blank" rel="noopener">Russell F. Algera</a>, <a href="http://orcid.org/0000-0002-8394-4423" _target="_blank" rel="noopener">Sebastien Monfette</a><br>
+				<em>Org. Process Res. Dev.</em> <strong>2024</strong>, 28, 3637&ndash;3644
+				</p>
+				]]>
+			</description>
+		</item>
+		<item>
+			<title>G-EnzyBeads for Biocatalysis Screening Facilitated by Volumetric Dosing</title>
+			<link>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/1AECB0EB3F1C9C3FE32C9EC3F72A3D</link>
+			<guid>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/1AECB0EB3F1C9C3FE32C9EC3F72A3D?guid=0</guid>
+			<pubDate>Tue, 27 Aug 2024 10:22 GMT</pubDate>
+			<description><![CDATA[
+				<h5>G-EnzyBeads for Biocatalysis Screening Facilitated by Volumetric Dosing</h5>
+				<p>
+				in <em>Organic Process Research &amp; Development</em><br>
+				<a href="http://orcid.org/0000-0002-2749-2055" _target="_blank" rel="noopener">Alexander V. Fejzagi&u0107;</a>, Matthias Schmid, Philipp Kollmus, <a href="http://orcid.org/0000-0003-4593-1629" _target="_blank" rel="noopener">Hao Wu</a>, <a href="http://orcid.org/0000-0001-7585-0438" _target="_blank" rel="noopener">Frederic Buono</a>, <a href="http://orcid.org/0000-0002-7724-1641" _target="_blank" rel="noopener">Marco Santagostino</a><br>
+				<em>Org. Process Res. Dev.</em> <strong>2024</strong>, 28, 3404&ndash;3413
+				</p>
+				]]>
+			</description>
+		</item>
+		<item>
+			<title>Dynamic sampling in autonomous process optimization</title>
+			<link>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/0B95BC20E257A1439ED4DD7EF5C75F</link>
+			<guid>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/0B95BC20E257A1439ED4DD7EF5C75F?guid=0</guid>
+			<pubDate>Tue, 21 May 2024 06:00 GMT</pubDate>
+			<description><![CDATA[
+				<h5>Dynamic sampling in autonomous process optimization</h5>
+				<p>
+				in <em>Chemical Science</em><br>
+				<a href="http://orcid.org/0000-0002-1393-9493" _target="_blank" rel="noopener">Melodie Christensen</a>, Yuting Xu, Eugene E. Kwan, <a href="http://orcid.org/0000-0003-1262-6126" _target="_blank" rel="noopener">Michael J. Di Maso</a>, <a href="http://orcid.org/0000-0002-9650-6844" _target="_blank" rel="noopener">Yining Ji</a>, Mikhail Reibarkh, Alexandra C. Sun, Andy Liaw, <a href="http://orcid.org/0000-0002-6102-815X" _target="_blank" rel="noopener">Patrick S. Fier</a>, <a href="http://orcid.org/0000-0002-9268-7545" _target="_blank" rel="noopener">Shane Grosser</a>, <a href="http://orcid.org/0000-0002-4345-3005" _target="_blank" rel="noopener">Jason E. Hein</a><br>
+				<em>Chem. Sci.</em> <strong>2024</strong>, 15, 7160&ndash;7169
+				</p>
+				]]>
+			</description>
+		</item>
+		<item>
+			<title>Streamlining Catalysis Screenings on a Budget</title>
+			<link>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/B2B336184595FCB305204AB6E80F24</link>
+			<guid>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/B2B336184595FCB305204AB6E80F24?guid=0</guid>
+			<pubDate>Mon, 06 May 2024 01:18 GMT</pubDate>
+			<description><![CDATA[
+				<h5>Streamlining Catalysis Screenings on a Budget</h5>
+				<p>
+				in <em>Organic Process Research &amp; Development</em><br>
+				Pascal Czember, Florian Weber, <a href="http://orcid.org/0009-0007-9149-6644" _target="_blank" rel="noopener">Agon Kokollari</a>, Hubert Spreitzer, <a href="http://orcid.org/0009-0001-6807-4941" _target="_blank" rel="noopener">Nico Fleck</a><br>
+				<em>Org. Process Res. Dev.</em> <strong>2024</strong>, 28, 1145&ndash;1150
+				</p>
+				]]>
+			</description>
+		</item>
+		<item>
+			<title>The effect of chemical representation on active machine learning towards closed-loop optimization</title>
+			<link>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/0ED21D2014681903321A760198D815</link>
+			<guid>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/0ED21D2014681903321A760198D815?guid=0</guid>
+			<pubDate>Wed, 08 Nov 2023 06:03 GMT</pubDate>
+			<description><![CDATA[
+				<h5>The effect of chemical representation on active machine learning towards closed-loop optimization</h5>
+				<p>
+				in <em>Reaction Chemistry &amp; Engineering</em><br>
+				A. Pomberger, A. A. Pedrina McCarthy, A. Khan, S. Sung, C. J. Taylor, <a href="http://orcid.org/0000-0002-7214-608X" _target="_blank" rel="noopener">M. J. Gaunt</a>, L. Colwell, <a href="http://orcid.org/0000-0001-8126-5315" _target="_blank" rel="noopener">D. Walz</a>, <a href="http://orcid.org/0000-0001-7621-0889" _target="_blank" rel="noopener">A. A. Lapkin</a><br>
+				<em>React. Chem. Eng.</em> <strong>2022</strong>, 7, 1368&ndash;1379
+				</p>
+				]]>
+			</description>
+		</item>
+		<item>
+			<title>Identifying opportunities for late-stage C-H alkylation with high-throughput experimentation and in silico reaction screening</title>
+			<link>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/FEFA6E1897BBB30546F91DE7456C85</link>
+			<guid>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/FEFA6E1897BBB30546F91DE7456C85?guid=0</guid>
+			<pubDate>Sat, 27 Apr 2024 11:22 GMT</pubDate>
+			<description><![CDATA[
+				<h5>Identifying opportunities for late-stage C-H alkylation with high-throughput experimentation and in silico reaction screening</h5>
+				<p>
+				in <em>Communications Chemistry</em><br>
+				<a href="http://orcid.org/0000-0002-0346-3786" _target="_blank" rel="noopener">David F. Nippa</a>, Kenneth Atz, <a href="http://orcid.org/0000-0001-8063-9952" _target="_blank" rel="noopener">Alex T. M&u00fc;ller</a>, <a href="http://orcid.org/0000-0001-7338-4103" _target="_blank" rel="noopener">Jens Wolfard</a>, <a href="http://orcid.org/0000-0002-4176-7887" _target="_blank" rel="noopener">Clemens Isert</a>, Martin Binder, Oliver Scheidegger, <a href="http://orcid.org/0000-0001-5718-8081" _target="_blank" rel="noopener">David B. Konrad</a>, <a href="http://orcid.org/0000-0002-3164-9270" _target="_blank" rel="noopener">Uwe Grether</a>, <a href="http://orcid.org/0000-0001-7895-497X" _target="_blank" rel="noopener">Rainer E. Martin</a>, <a href="http://orcid.org/0000-0001-6706-1084" _target="_blank" rel="noopener">Gisbert Schneider</a><br>
+				<em>Commun Chem</em> <strong>2023</strong>,             <a href="https://doi.org/10.1038/s42004-023-01047-5" target="_blank" rel="noopener">10.1038/s42004-023-01047-5</a>
+				</p>
+				]]>
+			</description>
+		</item>
 		<item>
 			<title>Enabling synthesis in fragment-based drug discovery (FBDD): microscale high-throughput optimisation of the medicinal chemist's toolbox reactions</title>
 			<link>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/47362632E3115C92FCABF12C69B133</link>
@@ -41,13 +206,13 @@
 			<title>High-throughput synthesis provides data for predicting molecular properties and reaction success</title>
 			<link>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/E271B9572F11E07ACDC3E6189D657B</link>
 			<guid>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/E271B9572F11E07ACDC3E6189D657B?guid=0</guid>
-			<pubDate>Tue, 31 Oct 2023 06:56 GMT</pubDate>
+			<pubDate>Mon, 18 Dec 2023 00:54 GMT</pubDate>
 			<description><![CDATA[
 				<h5>High-throughput synthesis provides data for predicting molecular properties and reaction success</h5>
 				<p>
 				in <em>Science Advances</em><br>
 				<a href="http://orcid.org/0000-0002-0907-2700" _target="_blank" rel="noopener">Julian G&u00f6;tz</a>, Moritz K. Jackl, <a href="http://orcid.org/0000-0001-9249-7672" _target="_blank" rel="noopener">Chalupat Jindakun</a>, Alexander N. Marziale, J&u00e9;r&u00f4;me Andr&u00e9;, <a href="http://orcid.org/0009-0004-9100-3457" _target="_blank" rel="noopener">Daniel J. Gosling</a>, <a href="http://orcid.org/0000-0002-1366-4071" _target="_blank" rel="noopener">Clayton Springer</a>, Marco Palmieri, <a href="http://orcid.org/0000-0002-7324-4968" _target="_blank" rel="noopener">Marcel Reck</a>, Alexandre Luneau, <a href="http://orcid.org/0000-0002-0484-5540" _target="_blank" rel="noopener">Cara E. Brocklehurst</a>, <a href="http://orcid.org/0000-0001-8394-8910" _target="_blank" rel="noopener">Jeffrey W. Bode</a><br>
-				<em>Sci. Adv.</em> <strong>2023</strong>, <a href="https://doi.org/10.1126/sciadv.adj2314" target="_blank" ref="noopener">10.1126/sciadv.adj2314</a>
+				<em>Sci. Adv.</em> <strong>2023</strong>,             <a href="https://doi.org/10.1126/sciadv.adj2314" target="_blank" rel="noopener">10.1126/sciadv.adj2314</a>
 				</p>
 				]]>
 			</description>
@@ -197,7 +362,7 @@
 				<p>
 				in <em>Chemistry–Methods</em><br>
 				<a href="http://orcid.org/0000-0001-5377-5801" _target="_blank" rel="noopener">Xisco Caldentey</a>, <a href="http://orcid.org/0000-0003-0484-1221" _target="_blank" rel="noopener">Eug&u00e9;nie Romero</a><br>
-				<em>Chemistry Methods</em> <strong>2023</strong>, <a href="https://doi.org/10.1002/cmtd.202200059" target="_blank" ref="noopener">10.1002/cmtd.202200059</a>
+				<em>Chemistry Methods</em> <strong>2023</strong>,             <a href="https://doi.org/10.1002/cmtd.202200059" target="_blank" rel="noopener">10.1002/cmtd.202200059</a>
 				</p>
 				]]>
 			</description>
@@ -377,7 +542,7 @@
 				<p>
 				in <em>Comprehensive Organometallic Chemistry IV</em><br>
 				David C. Leitch, Joseph Becica<br>
-				<em>Comprehensive Organometallic Chemistry IV</em> <strong>2022</strong>, None, 502&ndash;555
+				<em>None</em> <strong>2022</strong>, None, 502&ndash;555
 				</p>
 				]]>
 			</description>
@@ -482,7 +647,7 @@
 				<p>
 				in <em>Proceedings of the National Academy of Sciences</em><br>
 				<a href="http://orcid.org/0000-0001-5344-4375" _target="_blank" rel="noopener">Brittany C. Haas</a>, <a href="http://orcid.org/0000-0003-3561-6502" _target="_blank" rel="noopener">Adam E. Goetz</a>, Ana Bahamonde, J. Christopher McWilliams, <a href="http://orcid.org/0000-0002-5746-8830" _target="_blank" rel="noopener">Matthew S. Sigman</a><br>
-				<em>Proc. Natl. Acad. Sci. U.S.A.</em> <strong>2022</strong>, <a href="https://doi.org/10.1073/pnas.2118451119" target="_blank" ref="noopener">10.1073/pnas.2118451119</a>
+				<em>Proc. Natl. Acad. Sci. U.S.A.</em> <strong>2022</strong>,             <a href="https://doi.org/10.1073/pnas.2118451119" target="_blank" rel="noopener">10.1073/pnas.2118451119</a>
 				</p>
 				]]>
 			</description>
@@ -617,7 +782,7 @@
 				<p>
 				in <em>Nature Reviews Methods Primers</em><br>
 				Yuning Shen, <a href="http://orcid.org/0000-0002-3635-8720" _target="_blank" rel="noopener">Julia E. Borowski</a>, Melissa A. Hardy, Richmond Sarpong, <a href="http://orcid.org/0000-0002-6641-0833" _target="_blank" rel="noopener">Abigail G. Doyle</a>, <a href="http://orcid.org/0000-0001-5407-0643" _target="_blank" rel="noopener">Tim Cernak</a><br>
-				<em>Nat Rev Methods Primers</em> <strong>2021</strong>, <a href="https://doi.org/10.1038/s43586-021-00022-5" target="_blank" ref="noopener">10.1038/s43586-021-00022-5</a>
+				<em>Nat Rev Methods Primers</em> <strong>2021</strong>,             <a href="https://doi.org/10.1038/s43586-021-00022-5" target="_blank" rel="noopener">10.1038/s43586-021-00022-5</a>
 				</p>
 				]]>
 			</description>
@@ -632,7 +797,7 @@
 				<p>
 				in <em>Nature Communications</em><br>
 				Wenhao Gao, Priyanka Raghavan, <a href="http://orcid.org/0000-0002-8271-8723" _target="_blank" rel="noopener">Connor W. Coley</a><br>
-				<em>Nat Commun</em> <strong>2022</strong>, <a href="https://doi.org/10.1038/s41467-022-28736-4" target="_blank" ref="noopener">10.1038/s41467-022-28736-4</a>
+				<em>Nat Commun</em> <strong>2022</strong>,             <a href="https://doi.org/10.1038/s41467-022-28736-4" target="_blank" rel="noopener">10.1038/s41467-022-28736-4</a>
 				</p>
 				]]>
 			</description>
@@ -1097,7 +1262,7 @@
 				<p>
 				in <em>Science Advances</em><br>
 				<a href="http://orcid.org/0000-0001-8552-6615" _target="_blank" rel="noopener">Francesca Grisoni</a>, <a href="http://orcid.org/0000-0002-6818-5983" _target="_blank" rel="noopener">Berend J. H. Huisman</a>, <a href="http://orcid.org/0000-0002-1624-3264" _target="_blank" rel="noopener">Alexander L. Button</a>, <a href="http://orcid.org/0000-0002-8672-3386" _target="_blank" rel="noopener">Michael Moret</a>, Kenneth Atz, <a href="http://orcid.org/0000-0002-5359-8128" _target="_blank" rel="noopener">Daniel Merk</a>, <a href="http://orcid.org/0000-0001-6706-1084" _target="_blank" rel="noopener">Gisbert Schneider</a><br>
-				<em>Sci. Adv.</em> <strong>2021</strong>, <a href="https://doi.org/10.1126/sciadv.abg3338" target="_blank" ref="noopener">10.1126/sciadv.abg3338</a>
+				<em>Sci. Adv.</em> <strong>2021</strong>,             <a href="https://doi.org/10.1126/sciadv.abg3338" target="_blank" rel="noopener">10.1126/sciadv.abg3338</a>
 				</p>
 				]]>
 			</description>
@@ -1346,7 +1511,7 @@
 			<title>Aryl Amination Using Soluble Weak Base Enabled by a Water-Assisted Mechanism</title>
 			<link>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/7C230BD8BF63554D521BB0A020BD9B</link>
 			<guid>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/7C230BD8BF63554D521BB0A020BD9B?guid=0</guid>
-			<pubDate>Thu, 19 Nov 2020 15:02 GMT</pubDate>
+			<pubDate>Mon, 11 Dec 2023 15:52 GMT</pubDate>
 			<description><![CDATA[
 				<h5>Aryl Amination Using Soluble Weak Base Enabled by a Water-Assisted Mechanism</h5>
 				<p>
@@ -1532,7 +1697,7 @@
 				<p>
 				in <em>Comprehensive Organometallic Chemistry III</em><br>
 				V. Murphy<br>
-				<em>Comprehensive Organometallic Chemistry III</em> <strong>2007</strong>, None, 341&ndash;379
+				<em>None</em> <strong>2007</strong>, None, 341&ndash;379
 				</p>
 				]]>
 			</description>
@@ -1547,7 +1712,7 @@
 				<p>
 				in <em>Catalysis</em><br>
 				Stephan A. Schunk, Natalia B&u00f6;hmer, Cornelia Futter, Andreas Kuschel, Eko Prasetyo, Thomas Roussi&u00e8;re<br>
-				<em>Catalysis</em> <strong>2020</strong>, None, 172&ndash;215
+				<em>None</em> <strong>2020</strong>, None, 172&ndash;215
 				</p>
 				]]>
 			</description>
@@ -1577,7 +1742,7 @@
 				<p>
 				in <em>Comprehensive Organic Synthesis II</em><br>
 				W. Schafer, X. Bu, X. Gong, L.A Joyce, C.J. Welch<br>
-				<em>Comprehensive Organic Synthesis II</em> <strong>2014</strong>, None, 28&ndash;53
+				<em>None</em> <strong>2014</strong>, None, 28&ndash;53
 				</p>
 				]]>
 			</description>

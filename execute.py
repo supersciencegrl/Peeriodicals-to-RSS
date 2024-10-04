@@ -1,51 +1,92 @@
 from datetime import datetime
 import json
-import os
 import re
+from pathlib import Path
 import sys
-import time
 import xml.etree.ElementTree as ET
 
 from bs4 import BeautifulSoup
 import requests
 
-def get_email(email=None):
-    ''' Retrieves email address for polite communication with CrossRef - or asks user if unavailable.
-        Alternatively, pass a kwarg directly or from the command line. '''
-
+def get_email(email: str=None):
+    '''
+    Retrieves the email address for polite communication with CrossRef or prompts the user if 
+    unavailable.
+    
+    Args:
+    - email (str, optional): The email address. If not provided, it will be retrieved from a 
+    file or requested from the user.
+    
+    Returns:
+    str: The email address for polite communication with CrossRef.
+    '''
     if email:
         return email
-    filename = 'email.txt'
-    if os.path.isfile(filename):
-        with open(filename, 'rt') as fin:
-            email = fin.read()
+    
+    email_file = Path('email.txt')
+    if email_file.is_file():
+        with open(email_file, 'rt') as fin:
+            email = fin.read().strip()
     else:
-        email = input('Email address (for CrossRef polite authentication): ')
-        with open(filename, 'tw') as fout:
+        email = input('Email address (for CrossRef polite authentication): ').strip()
+        with open(email_file, 'wt') as fout:
             fout.write(email)
 
     return email
 
-def read_soup(r) -> list:
-    ''' Reads in the html and returns a list of titles from a single line in the html'''
-    
+def read_soup(r: requests.models.Response) -> list[str]:
+    '''
+    Parses the HTML content and extracts a list of titles from a specific section in the HTML.
+
+    Args:
+    - r (requests.models.Response): The HTTP response object containing the HTML content.
+
+    Returns:
+    list[str]: A list of titles extracted from the HTML content.
+    '''
     html = r.text
     soup = BeautifulSoup(html, 'html.parser')
     peeriodical = soup.find('peeriodical')
-    peeriodical_read = str(peeriodical).replace('&quot;', '"') # -> str
-    peeriodical_read = peeriodical_read.partition('"name":')[2]
+    peeriodical_read = str(peeriodical).replace('&quot;', '"') # Convert to string
+    peeriodical_read = peeriodical_read.partition('"name":')[2] # Extract section with titles
 
-    titles = [x for x in peeriodical_read.split('"title":')]
+    titles = [x for x in peeriodical_read.split('"title":') if x] # Splits into list of titles
 
     return titles
-    
-def publication_to_dict(publication: str) -> dict:
-    ''' Reads a single publication and converts important values to a dictionary '''
-    global lod
-    
+
+def extract_authors(splits: list[str]) -> list[tuple[str, str]]:
+    '''
+    Extracts author names and their corresponding ORCIDs from a list of string splits.
+
+    Args:
+    - splits (list[str]): The list of string splits containing author information.
+
+    Returns:
+    list[tuple[str, str]]: A list of tuples where each tuple contains an author's name and their ORCID.
+    '''
+    author_names = [splits[m+2] for m, value in enumerate(splits) if value == 'display_name']
+    author_names = [re.sub(r'\\(u[\da-fA-F]{4})', r'&\1;', name) for name in author_names] # Replace Unicode escape sequences
+    author_orcids = [splits[m+2].replace('\\/', '/') for m, value in enumerate(splits) if value == 'orcid']
+    authors = list(zip(author_names, author_orcids))
+
+    return authors
+
+def publication_to_dict(publication: str, lod: list[dict]) -> dict | None:
+    '''
+    Parses a single publication and extracts important values to a dictionary.
+
+    Args:
+    - publication (str): The publication data to be processed.
+    - lod (list[dict]): The list of dictionaries representing previous publications.
+
+    Returns:
+    dict | None: A dictionary containing the parsed publication data, or None if the publication is invalid.
+    '''
     title = publication.partition('",')[0][1:] # Pull title from between initial set of quotes
     if title == peeriodical_name: 
        return None # Not a publication
+    
+    # Replace selected HTML sequences in title
     title = title.replace('&lt;', '<').replace('&gt;', '>').replace('\\/', '/')
     results = {'title': re.sub(r'\\(u[\da-fA-F]{4})', r'&\1;', title)} # Replace Unicode escape sequences
 
@@ -58,8 +99,8 @@ def publication_to_dict(publication: str) -> dict:
     journal_url = splits[splits.index('url') + 2].replace('\\/', '/')
     if journal_url in [publication['journal_url'] for publication in lod]:
         return None # Publication already exists
+    
     results['journal_url'] = journal_url
-
     results['year'] = int(splits[splits.index('published_at') + 2])
     results['id'] = splits[splits.index('pubpeer_id') + 2]
     suffix = fr'{peeriodical_url_name}/publications/{results["id"]}'
@@ -78,159 +119,212 @@ def publication_to_dict(publication: str) -> dict:
         if 'true' in editorial_decision:
             editorial_decision = True
         results['editorial_decision'] = editorial_decision
-    else: # If an editorial decision is not listed, I *think* that means it's false... 
+    else: # If an editorial decision is not listed, it's considered False
         results['editorial_decision'] = False
 
-    author_names = [splits[m+2] for m, value in enumerate(splits) if value == 'display_name']
-    author_names = [re.sub(r'\\(u[\da-fA-F]{4})', r'&\1;', name) for name in author_names] # Replace Unicode escape sequences
-    author_orcids = [splits[m+2].replace('\\/', '/') for m, value in enumerate(splits) if value == 'orcid']
-    results['authors'] = list(zip(author_names, author_orcids))
+    results['authors'] = extract_authors(splits)
 
     return results
 
-def return_from_message(message, key):
-    if key in message:
-        return message[key]
-    else:
-        return None
+def escape_cdata(text: str) -> str:
+    '''
+    Escapes character data within a CDATA section.
 
-def escape_cdata(text):
-    # escape character data
+    Args:
+    - text (str): The input text to be escaped.
+
+    Returns:
+    str: The escaped text.
+
+    Raises:
+    ET.ParseError: If the input text was not of the correct type. 
+    '''
     try:
         if not text.startswith("<![CDATA[") and not text.endswith("]]>"):
-            if "&" in text:
-                text = text.replace("&", "&amp;")
-            if "<" in text:
-                text = text.replace("<", "&lt;")
-            if ">" in text:
-                text = text.replace(">", "&gt;")
+            text = text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
         return text
-    except (TypeError, AttributeError):
-        ET._raise_serialization_error(text)
+    except (TypeError, AttributeError) as error:
+        raise ET.ParseError(f'Failed to escape CDATA: {error}')
+    
 # Override the original function in the ET module
 ET._escape_cdata = escape_cdata
 
-def generate_reference(journal_abbr, year, volume, pages, doi):
+def generate_reference(journal_abbr: str, year: str, volume: str, pages: str, doi: str) -> str:
+    '''
+    Generates a reference string based on the provided publication details.
+
+    Args:
+    - journal_abbr (str): The abbreviated journal name.
+    - year (int): The publication year.
+    - volume (str): The volume information.
+    - pages (str): The page information.
+    - doi (str): The DOI (Digital Object Identifier) of the publication.
+
+    Returns:
+    str: The formatted reference string based on the provided publication details.
+    '''
     if pages:
-        return (f'<em>{journal_abbr}</em> '
-                f'<strong>{year}</strong>, '
-                f'{volume}, {pages}')
+        return f'<em>{journal_abbr}</em> <strong>{year}</strong>, {volume}, {pages}'
     else:
-        return (f'<em>{journal_abbr}</em> '
-                f'<strong>{year}</strong>, '
-                f'<a href="https://doi.org/{doi}" target="_blank" ref="noopener">{doi}</a>')
+        return f'<em>{journal_abbr}</em> <strong>{year}</strong>, \
+            <a href="https://doi.org/{doi}" target="_blank" rel="noopener">{doi}</a>'
 
-def generate_description(publication: dict):
-    ''' Generates a description of the publication for the RSS feed, using the CrossRef API '''
+def parse_message(message: dict) -> tuple[str|None, str|None, str|None, str|None]:
+    '''
+    Parses the message dictionary obtained from CrossRef API response.
 
-    if 'doi' in publication:
-        work = fr'http://api.crossref.org/works/{publication["doi"]}'
-        try:
-            r = requests.get(work, headers = headers_crossref, proxies=proxies, timeout = 20)
-        except requests.exceptions.ConnectTimeout:
-            sleep_time = 10
-            print(f'Pausing for {sleep_time} seconds')
-            time.sleep(sleep_time)
-            r = requests.get(work, headers = headers_crossref, proxies=proxies, timeout = 20)
-        try:
-            my_dict = json.loads(r.text)
-        except json.decoder.JSONDecodeError as e:
-            print('Error', e)
-            return None
-        journal, journal_abbr, volume, pages = [None] * 4 # Default
-        
-        if my_dict['status'] == 'ok':
-            message = my_dict['message']
-            journal = return_from_message(message, 'container-title')
-            if journal:
-                journal = journal[0]
-            journal_abbr = return_from_message(message, 'short-container-title')
-            if journal_abbr:
-                journal_abbr = journal_abbr[0]
-                if not journal:
-                    journal = journal_abbr
-            else:
-                journal_abbr = journal
-            volume = return_from_message(message, 'volume')
-            pages = return_from_message(message, 'page')
-            if pages:
-                pages = pages.replace('-', '&ndash;')
-            
-        else:
-            print(f'Request for {publication["title"]} not formed. \
-                  Status: {publication["status"]}')
-            return None
+    Args:
+    - message (dict): The dictionary containing publication information.
 
-        description_head = '<![CDATA[\n' # Use html
-        description_tail = '\n' + '\t'*4 + ']]>\n' + '\t'*3
-        reference = generate_reference(journal_abbr,
-                                       publication['year'],
-                                       volume,
-                                       pages,
-                                       publication['doi']
-                                       )
-        
-        description = ['\t'*4 + f'<h5>{publication["title"]}</h5>',
-                       '<p>',
-                       f'in <em>{journal}</em><br>' if journal else '<br>'
-                       ] + \
-                       [(', ').join([f'<a href="{i[1]}" _target="_blank" rel="noopener">{i[0]}</a>' if i[1] else i[0] for i in publication['authors']]) + '<br>'] + \
-                       [reference,
-                        '</p>']
-        description_heart = ('\n\t\t\t\t').join(description)
+    Returns:
+    tuple: A tuple containing the parsed journal, journal abbreviation, volume, and pages.
+    '''
+    journal = message.get('container-title')
+    journal = journal[0] if journal else None
+    journal_abbr = message.get('short-container-title')
+    journal_abbr = journal_abbr[0] if journal_abbr else None
+    volume = message.get('volume')
+    pages = message.get('page')
+    pages = pages.replace('-', '&ndash;') if pages else None
 
-        description = description_head + description_heart + description_tail
+    return journal, journal_abbr, volume, pages
+
+def generate_description(publication: dict) -> str | None:
+    '''
+    Generates a description of the publication for the RSS feed, using the CrossRef API.
+
+    Args:
+    - publication (dict): The publication information dictionary.
+
+    Returns:
+    str: The generated description for the publication. 
+    None: If the description generation fails. 
+    '''
+    if 'doi' not in publication:
+        return None
+    
+    work = fr'http://api.crossref.org/works/{publication["doi"]}'
+    try:
+        r = requests.get(work, headers = headers_crossref, proxies=proxies, timeout = 20)
+        r.raise_for_status()
+    except (requests.exceptions.ConnectTimeout, requests.exceptions.HTTPError) as error:
+        print(f'Request failed for doi {publication["doi"]}: {error}')
+
+    try:
+        my_dict = json.loads(r.text)
+    except json.decoder.JSONDecodeError as e:
+        print('Error', e)
+        return None
+    
+    if my_dict['status'] != 'ok':
+        print(f'Request for {publication["title"]} not successful. \
+              Status: {my_dict["status"]}'
+              )
+        return None
+    
+    message = my_dict['message']
+    journal, journal_abbr, volume, pages = parse_message(message)
+
+    description_head = '<![CDATA[\n' # Use html
+    description_tail = '\n' + '\t'*4 + ']]>\n' + '\t'*3
+    reference = generate_reference(journal_abbr,
+                                    publication['year'],
+                                    volume,
+                                    pages,
+                                    publication['doi']
+                                    )
+    
+    authors = [(', ').join([f'<a href="{i[1]}" _target="_blank" rel="noopener">{i[0]}</a>' if i[1] else i[0] for i in publication['authors']]) + '<br>']
+    description = ['\t'*4 + f'<h5>{publication["title"]}</h5>',
+                    '<p>',
+                    f'in <em>{journal}</em><br>' if journal else '<br>',
+                    *authors,
+                    reference,
+                    '</p>']
+    description_heart = ('\n\t\t\t\t').join(description)
+
+    description = description_head + description_heart + description_tail
 
     return description
 
-def output_xml(lod: list):
-    ''' Outputs the RSS feed as 'rss.xml' '''
-    
+def output_xml(lod: list[dict]):
+    '''
+    Generates an RSS feed based on the provided list of publications and writes it to 'rss.xml'.
+
+    Args:
+    - lod (list[dict]): The list of publications to be included in the RSS feed.
+
+    Side-effects:
+    Generates the RSS feed as 'rss.xml'. 
+    '''
     root = ET.Element('rss')
     root.set('xmlns:atom', "http://www.w3.org/2005/Atom")
     root.set('version', '2.0')
 
     channel = ET.SubElement(root, 'channel')
 
-    channel_title = ET.SubElement(channel, 'title').text = peeriodical_name
-    channel_link = ET.SubElement(channel, 'link').text = url
-    channel_atomlink = ET.SubElement(channel, 'atom:link',
-                                     href = '',
-                                     rel = 'self',
-                                     type = 'application/rss+xml')
-    channel_language = ET.SubElement(channel, 'language').text = 'en-gb'
-    channel_category = ET.SubElement(channel, 'category').text = 'Science'
-    channel_description = ET.SubElement(channel, 'description').text = peeriodical_description
+    ET.SubElement(channel, 'title').text = peeriodical_name
+    ET.SubElement(channel, 'link').text = url
+    ET.SubElement(channel, 'atom:link',
+                    href = '',
+                    rel = 'self',
+                    type = 'application/rss+xml'
+                    )
+    ET.SubElement(channel, 'language').text = 'en-gb'
+    ET.SubElement(channel, 'category').text = 'Science'
+    ET.SubElement(channel, 'description').text = peeriodical_description
 
     for publication in lod[::-1]:
         if publication['editorial_decision'] is True:
             title = publication['title']
-##            print(title) # for debugging
             link = publication['peeriodical_url']
             guid = f'{link}?guid=0'
-            pubDate = publication['updated'].strftime('%a, %d %b %Y %H:%M GMT')
+            pub_date = publication['updated'].strftime('%a, %d %b %Y %H:%M GMT')
 
             item = ET.SubElement(channel, 'item')
-            item_title = ET.SubElement(item, 'title').text = title
-            item_link = ET.SubElement(item, 'link').text = link
-            item_guid = ET.SubElement(item, 'guid').text = guid
-            item_pubDate = ET.SubElement(item, 'pubDate').text = pubDate
+            ET.SubElement(item, 'title').text = title
+            ET.SubElement(item, 'link').text = link
+            ET.SubElement(item, 'guid').text = guid
+            ET.SubElement(item, 'pubDate').text = pub_date
             
             description = generate_description(publication)
-            item_description = ET.SubElement(item, 'description').text = description
+            ET.SubElement(item, 'description').text = description
 
     tree = ET.ElementTree(root)
     ET.indent(tree, space='\t', level=0)
     tree.write('rss.xml', xml_declaration=True, encoding='utf-8')
 
+def run(url: str, proxies: dict) -> list[dict]:
+    '''
+    Executes the main workflow, including fetching data, processing it, generating an RSS feed, 
+    and returning the processed data.
+
+    Args:
+    - url (str): The URL to fetch data from.
+    - proxies (dict): The proxies to be used for the request.
+
+    Returns:
+    list[dict]: The processed data used to generate the RSS feed.
+    '''
+    r = requests.get(url, proxies=proxies)
+    r.raise_for_status()
+    titles = read_soup(r)
+    lod = []
+    for title in titles:
+        result = publication_to_dict(title, lod)
+        if result:
+            lod.append(result)
+
+    output_xml(lod)
+    return lod
+
 # Read in proxy file, if any
 proxies = {}
-if os.path.isfile('proxies.txt'):
-    with open('proxies.txt', 'rt') as fin:
-        for line in fin.readlines():
-            k, v = line.split(': ')
-            proxies[k] = v.strip()
-proxies = {}
+proxy_file = Path('proxies.json')
+if proxy_file.is_file():
+    with open(proxy_file, 'rt') as fin:
+        proxies = json.load(fin)
+proxies = {} # Uncomment this when working locally, outside AZ network
 
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36',
            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -257,21 +351,8 @@ headers_crossref = {'User-Agent': 'Peeriodicals-to-RSS; mailto:{email}',
 peeriodical_name = 'High-Throughput Automation In R and D'
 peeriodical_url_name = 'high-throughput-automation-in-rampd'
 url = fr'https://peeriodicals.com/peeriodicals/{peeriodical_url_name}'
-peeriodical_description = 'This journal aims to be a repository of peer-reviewed articles on the use of HTE for small molecules and related topics in R&D laboratories.'
+peeriodical_description = 'This journal aims to be a repository of peer-reviewed articles on the \
+    use of HTE for small molecules and related topics in R&D laboratories.'
 
-r = requests.get(url, proxies=proxies)
-if r.status_code == 200:
-    lod = []
-    titles = read_soup(r)
-    for title in titles:
-        result = publication_to_dict(title)
-        if result:
-            lod.append(result)
-
-    if lod:
-        pass
-else:
-    print(r.status_code, 'Page not found')
-    raise
-
-output_xml(lod)
+if __name__ == '__main__':
+    lod = run(url, proxies)
