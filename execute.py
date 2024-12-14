@@ -8,7 +8,7 @@ import xml.etree.ElementTree as ET
 from bs4 import BeautifulSoup
 import requests
 
-def get_email(email: str=None):
+def get_email(email: str=None) -> str:
     '''
     Retrieves the email address for polite communication with CrossRef or prompts the user if 
     unavailable.
@@ -149,7 +149,10 @@ def escape_cdata(text: str) -> str:
 # Override the original function in the ET module
 ET._escape_cdata = escape_cdata
 
-def generate_reference(journal_abbr: str, year: str, volume: str, pages: str, doi: str) -> str:
+def generate_reference(journal_abbr: str, 
+                       year: str, volume: str, pages: str, 
+                       doi: str
+                       ) -> str:
     '''
     Generates a reference string based on the provided publication details.
 
@@ -169,7 +172,8 @@ def generate_reference(journal_abbr: str, year: str, volume: str, pages: str, do
         return f'<em>{journal_abbr}</em> <strong>{year}</strong>, \
             <a href="https://doi.org/{doi}" target="_blank" rel="noopener">{doi}</a>'
 
-def parse_message(message: dict) -> tuple[str|None, str|None, str|None, str|None]:
+def parse_message(message: dict
+                  ) -> tuple[str|None, str|None, str|None, str|None]:
     '''
     Parses the message dictionary obtained from CrossRef API response.
 
