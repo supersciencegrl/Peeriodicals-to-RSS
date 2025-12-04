@@ -762,7 +762,15 @@
 			<link>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/1557BEA70BC37F90E7FD3D364D282C</link>
 			<guid>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/1557BEA70BC37F90E7FD3D364D282C?guid=0</guid>
 			<pubDate>Fri, 25 Mar 2022 09:08 GMT</pubDate>
-			<description />
+			<description><![CDATA[
+				<h5>Flexible automation accelerates materials discovery</h5>
+				<p>
+				in <em>Nature Materials</em><br>
+				<a href="http://orcid.org/0000-0002-8547-9318" _target="_blank" rel="noopener">Benjamin P. MacLeod</a>, <a href="http://orcid.org/0000-0002-3400-0848" _target="_blank" rel="noopener">Fraser G. L. Parlane</a>, Amanda K. Brown, <a href="http://orcid.org/0000-0002-4345-3005" _target="_blank" rel="noopener">Jason E. Hein</a>, <a href="http://orcid.org/0000-0001-6875-849X" _target="_blank" rel="noopener">Curtis P. Berlinguette</a><br>
+				<em>Nat. Mater.</em> <strong>2021</strong>, 21, 722&ndash;726
+				</p>
+				]]>
+			</description>
 		</item>
 		<item>
 			<title>Air-Tolerant Nickel-Catalyzed Cyanation of (Hetero)aryl Halides Enabled by Polymethylhydrosiloxane, a Green Reductant</title>
@@ -1879,45 +1887,21 @@
 			<link>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/DBBBFF031FBA9FA6179B87025FC84F</link>
 			<guid>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/DBBBFF031FBA9FA6179B87025FC84F?guid=0</guid>
 			<pubDate>Fri, 21 Aug 2020 08:19 GMT</pubDate>
-			<description><![CDATA[
-				<h5>High-Throughput Extractions: A New Paradigm for Workup Optimization in Pharmaceutical Process Development</h5>
-				<p>
-				in <em>Organic Process Research &amp; Development</em><br>
-				Joshua A. Selekman, Kristy Tran, Zhongmin Xu, Michael Dummeldinger, Susanne Kiau, Joseph Nolfo, Jacob Janey<br>
-				<em>Org. Process Res. Dev.</em> <strong>2016</strong>, 20, 1728&ndash;1737
-				</p>
-				]]>
-			</description>
+			<description />
 		</item>
 		<item>
 			<title>Development of a Highly Automated Workflow for Investigating Polymorphism and Assessing Risk of Forming Undesired Crystal Forms within a Crystallization Design Space</title>
 			<link>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/40B7BA3D2E3C141DE6D335FE2ECA2C</link>
 			<guid>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/40B7BA3D2E3C141DE6D335FE2ECA2C?guid=0</guid>
 			<pubDate>Fri, 21 Aug 2020 08:18 GMT</pubDate>
-			<description><![CDATA[
-				<h5>Development of a Highly Automated Workflow for Investigating Polymorphism and Assessing Risk of Forming Undesired Crystal Forms within a Crystallization Design Space</h5>
-				<p>
-				in <em>Organic Process Research &amp; Development</em><br>
-				Joshua A. Selekman, Daniel Roberts, Victor Rosso, Jun Qiu, Joseph Nolfo, Qi Gao, Jacob Janey<br>
-				<em>Org. Process Res. Dev.</em> <strong>2016</strong>, 20, 70&ndash;75
-				</p>
-				]]>
-			</description>
+			<description />
 		</item>
 		<item>
 			<title>High-Throughput and Ultrafast Liquid Chromatography</title>
 			<link>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/57818875E78037FF65F122DAD8AF8F</link>
 			<guid>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/57818875E78037FF65F122DAD8AF8F?guid=0</guid>
 			<pubDate>Fri, 21 Aug 2020 08:12 GMT</pubDate>
-			<description><![CDATA[
-				<h5>High-Throughput and Ultrafast Liquid Chromatography</h5>
-				<p>
-				in <em>Analytical Chemistry</em><br>
-				Alexander S. Kaplitz, Glenn A. Kresge, Benjamin Selover, Leah Horvat, Edward G. Franklin, Justin M. Godinho, Kaitlin M. Grinias, Samuel W. Foster, Joshua J. Davis, <a href="http://orcid.org/0000-0001-9872-9630" _target="_blank" rel="noopener">James P. Grinias</a><br>
-				<em>Anal. Chem.</em> <strong>2020</strong>, 92, 67&ndash;84
-				</p>
-				]]>
-			</description>
+			<description />
 		</item>
 		<item>
 			<title>Rise of the Robots</title>
@@ -1969,15 +1953,7 @@
 			<link>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/063FA4B5DBD8D8ACBF0223530FB76D</link>
 			<guid>https://peeriodicals.com/peeriodical/high-throughput-automation-in-rampd/publications/063FA4B5DBD8D8ACBF0223530FB76D?guid=0</guid>
 			<pubDate>Tue, 18 Aug 2020 16:15 GMT</pubDate>
-			<description><![CDATA[
-				<h5>Engineering Chemistry Innovation</h5>
-				<p>
-				in <em>ACS Medicinal Chemistry Letters</em><br>
-				<a href="http://orcid.org/0000-0001-7414-3627" _target="_blank" rel="noopener">Jeffrey Y. Pan</a><br>
-				<em>ACS Med. Chem. Lett.</em> <strong>2019</strong>, 10, 703&ndash;707
-				</p>
-				]]>
-			</description>
+			<description />
 		</item>
 		<item>
 			<title>Chemistry informer libraries: a chemoinformatics enabled approach to evaluate and advance synthetic methods</title>
